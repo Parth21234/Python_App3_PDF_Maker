@@ -14,7 +14,8 @@ for index, row in df.iterrows():
     pdf.set_text_color(100, 100, 100) # Grey, values for r,g,b.
     # For red, 254,0,0.
     pdf.cell(w=0, h=12, txt=row["Topic"], align='L', ln=1)
-    pdf.line(10, 21, 200,21)
+    for y in range(20, 298, 10):
+        pdf.line(10, y, 200, y)
     # The arguments of the line method will be x1,y1,x2,y2.
 
     # Set the footer.
@@ -33,6 +34,9 @@ for index, row in df.iterrows():
         pdf.set_font(family="Times", style='I', size=8)
         pdf.set_text_color(180, 180, 180)
         pdf.cell(w=0, h=12, txt=row["Topic"], align='R')
+
+        for y in range(20, 298, 10):
+            pdf.line(10, y, 200, y)
 
 # border = 1 is for the box around the texts.
 # ln is actually a break line.
