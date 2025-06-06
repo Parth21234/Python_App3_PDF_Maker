@@ -15,6 +15,9 @@ for index, row in df.iterrows():
     pdf.line(10, 21, 200,21)
     # The arguments of the line method will be x1,y1,x2,y2.
 
+    for i in range(row["Pages"] - 1):
+        pdf.add_page()
+
 # border = 1 is for the box around the texts.
 # ln is actually a break line.
 # height 'h' has to be set as same as size of the font/text.
